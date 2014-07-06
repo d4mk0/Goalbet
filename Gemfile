@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
 #gem 'paloma'
-gem 'slim'
+gem 'slim-rails'
 
 # Bootstrap
 gem 'bootstrap-sass'
