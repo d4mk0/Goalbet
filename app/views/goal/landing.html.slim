@@ -12,10 +12,11 @@
     br
     = t('landing.description2')
   .row
-    .col-xs-2
-    .col-xs-4 = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: 'Ваша цель'
-    .col-xs-4.clearfix
+    .col-xs-3 
+    .col-xs-3 = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
+    .col-xs-3.clearfix
       .btn.btn-lg.btn-default href="#" = t('landing.action')
 .mastfoot
   .inner
     p = t('landing.footer')
+    
