@@ -1,23 +1,21 @@
-= content_for :title, t(:landing_title)
+= content_for :title, t('landing.title')
 .masthead.clearfix
   .inner
-    h3.masthead-brand Cover
+    h3.masthead-brand = t('landing.brand') 
     ul.nav.masthead-nav
-      li.active
-        a href="#"  Home
-      li
-        a href="#"  Features
-      li
-        a href="#"  Contact
+      li.active = link_to t('landing.menu.main'), '#'
+      li = link_to t('landing.menu.more'), '#'
 .inner.cover
-  h1.cover-heading Cover your page.
-  p.lead Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
-  p.lead
-    a.btn.btn-lg.btn-default href="#"  Learn more
+  h1.cover-heading = t('landing.header')
+  .lead
+    = t('landing.description1')
+    br
+    = t('landing.description2')
+  .row
+    .col-xs-2
+    .col-xs-4 = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: 'Ваша цель'
+    .col-xs-4.clearfix
+      .btn.btn-lg.btn-default href="#" = t('landing.action')
 .mastfoot
   .inner
-    p
-      | Cover template for
-      a href="http://getbootstrap.com"  Bootstrap
-      | by
-      a href="https://twitter.com/mdo"  @mdo
+    p = t('landing.footer')
