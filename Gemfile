@@ -4,15 +4,16 @@ gem 'rails', '4.1.4'
 
 gem 'sqlite3'
 
-gem 'sass-rails'
 gem 'less-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'therubyracer'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
-gem 'paloma'
+#gem 'paloma'
+gem 'slim'
 
 # Bootstrap
 gem 'bootstrap-sass'
