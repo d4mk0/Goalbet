@@ -11,11 +11,11 @@
     = t('landing.description1')
     br
     = t('landing.description2')
-  .row
-    .col-xs-3 
-    .col-xs-3 = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
-    .col-xs-3.clearfix
-      .btn.btn-lg.btn-default href="#" = t('landing.action')
+  = form_tag '/reach', method: :post  do |f|
+    .row
+      .col-xs-3 
+      .col-xs-3 = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
+      .col-xs-3.clearfix = submit_tag t('landing.action'), class: 'btn btn-lg btn-default'
 .mastfoot
   .inner
     p = t('landing.footer')

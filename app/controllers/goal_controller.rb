@@ -4,4 +4,8 @@ class GoalController < ApplicationController
     render layout: 'landing'
   end
 
+  def reach
+    
+  end
+
 end
