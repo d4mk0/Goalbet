@@ -33,7 +33,7 @@ group :development do
   gem 'capistrano'
 end
 
-group [:development, :test] do
+group :development, :test do
   gem 'debugger'
 end
 
