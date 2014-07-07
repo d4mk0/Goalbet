@@ -13,9 +13,18 @@
     = t('landing.description2')
   = form_tag '/reach', method: :post  do |f|
     .row
-      .col-xs-3 
-      .col-xs-3 = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
-      .col-xs-3.clearfix = submit_tag t('landing.action'), class: 'btn btn-lg btn-default'
+      .col-xs-2 style='margin-right: 2%;'
+      .col-xs-4
+        .input-group
+          span.input-group-addon
+            i.fa.fa-rub.fa-2x
+          = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
+      .col-xs-3.clearfix
+        button.btn.btn-default.btn-lg type="submit" 
+          i.fa.fa-star-o.fa-lg style="margin-right: 7px;"
+          = t('landing.action')
+
+
 .mastfoot
   .inner
     p = t('landing.footer')
