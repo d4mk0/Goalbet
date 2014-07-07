@@ -17,6 +17,7 @@ ru:
       footer: Луис Сепульведа. Старик, который читал любовные романы
     goal: "%{amount} руб."
     title: Как достичь цели?
+    percent_completed: "%{percent}%% достигнуто"
   navbar:
     select_goal: Выбрать цель
     how_reach_goal: Как достичь цели?
