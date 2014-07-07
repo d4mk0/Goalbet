@@ -16,9 +16,9 @@
       .col-xs-2 style='margin-right: 2%;'
       .col-xs-4
         .input-group
-          span.input-group-addon
+          = text_field_tag 'goal', @goal, class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
+          span.input-group-addon style='border-bottom-right-radius: 6px; border-top-right-radius: 6px;'
             i.fa.fa-rub.fa-2x
-          = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
       .col-xs-3.clearfix
         button.btn.btn-default.btn-lg type="submit" 
           i.fa.fa-star-o.fa-lg style="margin-right: 7px;"
