@@ -30,7 +30,7 @@ html lang="en"
         a.navbar-brand href="#"Goalbet
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav
-            li= link_to t('navbar.select_goal'), root_path
+            li data-no-turbolink="" = link_to t('navbar.select_goal'), root_path
             li class="#{params[:action] == 'reach' ? 'active' : ''}"= link_to t('navbar.how_reach_goal'), "/reach"
 
     .container
