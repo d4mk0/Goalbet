@@ -16,3 +16,5 @@
 //= require jquery.cookie
 //= require twitter/bootstrap
 //= require turbolinks
+//= require paloma
+//= require_tree ./controllers

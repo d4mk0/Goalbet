@@ -4,15 +4,18 @@ gem 'rails', '4.1.4'
 
 gem 'sqlite3'
 
-gem 'less-rails'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
+gem 'uglifier'
 gem 'therubyracer'
+gem 'sass-rails', '~> 4.0.3'
+gem 'less-rails'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
-#gem 'paloma'
+gem 'jbuilder'
+gem 'paloma'
+
 gem 'slim-rails'
 
 # Bootstrap
@@ -37,5 +40,3 @@ end
 group :development, :test do
   gem 'debugger'
 end
-
-gem 'jbuilder', '~> 1.2'
