@@ -51,6 +51,15 @@
                 p
                   = t('reach.you_can_reach')
                   span#bets_count
-                .icon#help_bets-count data-toggle="tooltip" data-placement="right" title=t('reach.how_to')
+                .icon#help_bets-count data-toggle="tooltip" data-placement="right" data-strategy-path=strategy_path title=t('reach.how_to')
                   i.fa.fa-question.fa-2x
 
+.modal.fade#bets_strategy-modal
+  .modal-dialog
+    .modal-content
+      .modal-header 
+        button.close data-dismiss="modal" type="button" 
+          i.fa.fa-times
+        h4 = t('strategy.title')
+
+      .modal-body

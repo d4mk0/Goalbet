@@ -46,3 +46,12 @@ GoalController.prototype.reach = ->
 
   $("#current_balance").on 'change', ->
     update_progress($(@).val())
+
+  $("#help_bets-count").on 'click', ->
+    $("#bets_strategy-modal .modal-body").load $(this).data("strategy-path"), ->
+      $("#bets_strategy-modal").modal 'show'
+
+GoalController.prototype.strategy = ->
+  modal = $('#bets_strategy-modal')
+  $(modal).scroll ->
+    $("#balance-info", modal).css top: (modal.scrollTop()) - 120 + "px"  if modal.scrollTop() > 95

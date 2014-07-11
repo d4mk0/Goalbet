@@ -23,6 +23,15 @@ ru:
     must_multiply: 'Необходимо приумножить баланс:'
     you_can_reach: 'Ставок до достижения цели:'
     how_to: Узнать как?
+  strategy:
+    title: Стратегия достижения заданной цели
+    table_header:
+      bet_size: Ставка
+      koeff: Коэффициент
+      win_size: Выигрыш
+      summary_balance: Общий баланс
+    current_balance: "Текущий баланс: %{balance}"
+    goal_balance: "Целевой баланс: %{balance}"
   navbar:
     select_goal: Выбрать цель
     how_reach_goal: Как достичь цели?

@@ -1,0 +1,23 @@
+.container-fluid#balance-info
+  .row
+    .col-md-12
+      .label.label-info = number_to_currency @current_balance, precision: 2
+      i.fa.fa-angle-double-right.fa-lg.icon
+      .label.label-default = number_to_currency @goal, precision: 2
+
+table.table.table-hover
+  thead
+    tr
+      th #
+      th = t('strategy.table_header.bet_size')
+      th = t('strategy.table_header.koeff')
+      th = t('strategy.table_header.win_size')
+      th = t('strategy.table_header.summary_balance')
+  tbody
+    - strategy_list(@current_balance, @goal).each_with_index do |line, i|
+      tr
+        td = i + 1
+        td = line[:bet_size]
+        td = line[:koeff]
+        td = line[:win_size]
+        td = line[:summary_balance]

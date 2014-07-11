@@ -1,6 +1,6 @@
 class GoalController < ApplicationController
 
-  before_action :set_goal, only: [:landing, :reach]
+  before_action :set_goal, :set_current_balance
 
   def landing
     render layout: 'landing'
@@ -12,6 +12,10 @@ class GoalController < ApplicationController
     }
   end
 
+  def strategy
+    render partial: 'strategy'
+  end
+
   private
 
     def set_goal
@@ -20,4 +24,8 @@ class GoalController < ApplicationController
       @goal = cookies[:goal].to_i
     end
 
+    def set_current_balance
+      @current_balance = cookies[:current_balance].to_i > 0 ? cookies[:current_balance].to_i : @goal*0.01
+      cookies[:current_balance] = @current_balance if cookies[:current_balance].to_i != @current_balance
+    end
 end
