@@ -30,6 +30,7 @@ gem "rails-settings-cached", "0.4.1"
 
 group :production do
   gem 'unicorn'
+  gem 'mysql2'
 end
 
 group :development do
