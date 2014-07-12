@@ -54,4 +54,4 @@ GoalController.prototype.reach = ->
 GoalController.prototype.strategy = ->
   modal = $('#bets_strategy-modal')
   $(modal).scroll ->
-    $("#balance-info", modal).css top: (modal.scrollTop()) - 120 + "px"  if modal.scrollTop() > 95
+    $("#balance-info", modal).css top: (if modal.scrollTop() > 95 then modal.scrollTop() - 120 else -14) + "px" 
