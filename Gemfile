@@ -35,7 +35,10 @@ end
 
 group :development do
   gem 'better_errors'
-  gem 'capistrano'
+  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
 end
 
 group :development, :test do
