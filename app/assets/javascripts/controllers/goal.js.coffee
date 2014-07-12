@@ -55,3 +55,8 @@ GoalController.prototype.strategy = ->
   modal = $('#bets_strategy-modal')
   $(modal).scroll ->
     $("#balance-info", modal).css top: (if modal.scrollTop() > 95 then modal.scrollTop() - 120 else -14) + "px" 
+
+GoalController.prototype.landing = ->
+  $("#goal").autoNumeric "init",
+    aSep: ' '
+    mDec: '0'
