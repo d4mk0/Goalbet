@@ -1,9 +1,9 @@
 .container-fluid#balance-info
   .row
     .col-md-12
-      .label.label-info = number_to_currency @current_balance, precision: 2
+      .label.label-info = number_to_currency @current_balance, precision: 0
       i.fa.fa-angle-double-right.fa-lg.icon
-      .label.label-default = number_to_currency @goal, precision: 2
+      .label.label-default = number_to_currency @goal, precision: 0
 
 table.table.table-hover
   thead

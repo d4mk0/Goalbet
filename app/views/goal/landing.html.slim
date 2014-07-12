@@ -4,7 +4,7 @@
     h3.masthead-brand = t('landing.brand') 
     ul.nav.masthead-nav
       li.active = link_to t('landing.menu.main'), '#'
-      li = link_to t('landing.menu.more'), '#'
+      li data-no-turbolink="" = link_to t('landing.menu.more'), reach_path
 .inner.cover
   h1.cover-heading = t('landing.header')
   .lead
@@ -16,7 +16,7 @@
       .col-xs-2 style='margin-right: 2%;'
       .col-xs-4
         .input-group
-          = text_field_tag 'goal', @goal, class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
+          = text_field_tag 'goal', '', class: 'form-control input-lg', placeholder: t('landing.input_placeholder')
           span.input-group-addon style='border-bottom-right-radius: 6px; border-top-right-radius: 6px;'
             i.fa.fa-rub.fa-2x
       .col-xs-3.clearfix

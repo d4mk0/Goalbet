@@ -4,7 +4,7 @@
     h1
       = t('reach.title')
       |&nbsp;
-      span.label.label-default = t('reach.goal', amount: @goal)
+      span.label.label-default = number_to_currency @goal, precision: 0
     .col-md-offset-6.col-md-6
       blockquote.blockquote-reverse
         p = t('reach.blockquote.text')

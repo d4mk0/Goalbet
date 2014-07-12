@@ -1,6 +1,6 @@
 class GoalController < ApplicationController
 
-  before_action :set_goal, :set_current_balance
+  before_action :set_goal, :set_current_balance, except: :landing
 
   def landing
     render layout: 'landing'
@@ -19,7 +19,8 @@ class GoalController < ApplicationController
   private
 
     def set_goal
-      goal = params[:goal].to_i > 0 ? params[:goal].to_i : (cookies[:goal].to_i > 0 ? cookies[:goal].to_i : 1000000)
+      params_goal = params[:goal].present? ? params[:goal].delete!(' ') : params[:goal]
+      goal = params_goal.to_i > 0 ? params[:goal].to_i : (cookies[:goal].to_i > 0 ? cookies[:goal].to_i : 1000000) 
       cookies[:goal] = {value: goal, expires: 1.year.from_now} if cookies[:goal].to_i != goal
       @goal = cookies[:goal].to_i
     end
