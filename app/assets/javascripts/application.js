@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.nouislider.min
 //= require jquery.cookie
+//= require autoNumeric
 //= require twitter/bootstrap
 //= require turbolinks
 //= require paloma
