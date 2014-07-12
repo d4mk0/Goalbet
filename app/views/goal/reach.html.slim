@@ -11,11 +11,15 @@
         footer = t('reach.blockquote.footer')
 .container
   .row
+    p.text-center
+      span.help-block = t('reach.progress')
     .progress.progress-striped.active#reach-progress
       .progress-bar.progress-bar-info role="progressbar"
-          strong
-            span.percent = 1
-            = t('reach.percent_completed')
+        strong
+          span.percent = 1
+          = t('reach.percent_completed')
+.container
+  .row
     .col-md-6
       .panel.panel-info
         .panel-heading
