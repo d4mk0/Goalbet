@@ -1,6 +1,7 @@
 class GoalController < ApplicationController
 
   before_action :set_goal, :set_current_balance, except: :landing
+  before_action :whether_to_show_landing?, only: :landing
 
   def landing
     render layout: 'landing'
@@ -28,5 +29,9 @@ class GoalController < ApplicationController
     def set_current_balance
       @current_balance = cookies[:current_balance].to_i > 0 ? cookies[:current_balance].to_i : @goal*0.01
       cookies[:current_balance] = @current_balance if cookies[:current_balance].to_i != @current_balance
+    end
+
+    def whether_to_show_landing?
+      redirect_to :reach and return if cookies[:goal].present? && (request.referer.blank? || URI(request.referer).path != '/reach')
     end
 end
