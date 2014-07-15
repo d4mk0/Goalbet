@@ -16,6 +16,7 @@
 //= require jquery.cookie
 //= require autoNumeric
 //= require twitter/bootstrap
+//= require bootstrap3-editable/bootstrap-editable
 //= require turbolinks
 //= require paloma
 //= require_tree ./controllers

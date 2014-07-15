@@ -15,6 +15,7 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'paloma'
+gem 'bootstrap-x-editable-rails'
 
 gem 'slim-rails'
 

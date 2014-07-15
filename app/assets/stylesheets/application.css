@@ -11,5 +11,7 @@
  *= require_self
  *= require bootstrap_and_overrides
  *= require jquery.nouislider
+ *= require bootstrap3-editable/bootstrap-editable
+ 
  *= require goal
  */
