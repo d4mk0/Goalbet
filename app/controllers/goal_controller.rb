@@ -1,6 +1,6 @@
 class GoalController < ApplicationController
 
-  before_action :set_goal, :set_current_balance, except: :landing
+  before_action :set_goal, :set_current_balance, :set_minimal_bet_size, except: :landing
   before_action :whether_to_show_landing?, only: :landing
 
   def landing
@@ -9,7 +9,8 @@ class GoalController < ApplicationController
 
   def reach
     @values = {
-      reached_progress: (@goal*0.01).to_i
+      reached_progress: (@goal*0.01).to_i,
+      minimal_bet_size: @minimal_bet_size
     }
   end
 
@@ -29,6 +30,11 @@ class GoalController < ApplicationController
     def set_current_balance
       @current_balance = cookies[:current_balance].to_i > 0 ? cookies[:current_balance].to_i : @goal*0.01
       cookies[:current_balance] = @current_balance if cookies[:current_balance].to_i != @current_balance
+    end
+
+    def set_minimal_bet_size
+      @minimal_bet_size = cookies[:minimal_bet_size].to_i
+      cookies[:minimal_bet_size] = @minimal_bet_size if cookies[:minimal_bet_size].to_i != @minimal_bet_size
     end
 
     def whether_to_show_landing?

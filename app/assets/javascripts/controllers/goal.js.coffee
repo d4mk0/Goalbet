@@ -52,6 +52,16 @@ GoalController.prototype.reach = ->
     $("#bets_strategy-modal .modal-body").load $(this).data("strategy-path"), ->
       $("#bets_strategy-modal").modal 'show'
 
+  $("#minimal_bet_size").editable
+    emptytext: '0'
+    mode: 'inline'
+    success: (resp, value) ->
+      $.cookie 'minimal_bet_size', value, 
+        expires: 365
+      return
+    validate: (value) ->
+      return 'Error' unless /^\d*$/.test value
+
 GoalController.prototype.strategy = ->
   modal = $('#bets_strategy-modal')
   $(modal).scroll ->

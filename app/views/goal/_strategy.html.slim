@@ -14,7 +14,7 @@ table.table.table-hover
       th = t('strategy.table_header.win_size')
       th = t('strategy.table_header.summary_balance')
   tbody
-    - strategy_list(@current_balance, @goal).each_with_index do |line, i|
+    - strategy_list(@current_balance, @goal, minimal_bet_size: @minimal_bet_size).each_with_index do |line, i|
       tr
         td = i + 1
         td = line[:bet_size]

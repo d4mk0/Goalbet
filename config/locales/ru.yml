@@ -23,6 +23,9 @@ ru:
     you_can_reach: 'Ставок до достижения цели:'
     how_to: Узнать как?
     progress: Прогресс достижения цели
+    some_information: Некоторая информация
+    additional:
+      minimal_bet_size: 'Минимальный размер ставки:'
   strategy:
     title: Стратегия достижения заданной цели
     table_header:

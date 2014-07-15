@@ -20,44 +20,56 @@
           = t('reach.percent_completed')
 .container
   .row
+    .container
+      .row
+        .col-md-6
+          .panel.panel-info
+            .panel-heading
+              h3 = t('reach.your_balance_now')
+            .panel-body
+              p
+                #current_balance_slider.slider data-goal=@goal
+              p
+                .col-md-offset-3.col-md-5
+                  .input-group
+                    = text_field_tag 'current_balance', @values[:reached_progress], class: 'form-control input-lg'
+                    span.input-group-addon
+                      i.fa.fa-rub.fa-2x
+        .col-md-6
+          .panel.panel-info#stats_panel
+            .panel-heading
+              h3 = t('reach.stat')
+            .panel-body
+              .container
+                .row
+                  .item
+                    .icon
+                      i.fa.fa-arrow-up.fa-2x
+                    p
+                      = t('reach.must_multiply')
+                      span#multiply_size
+                      |x
+              .container
+                .row
+                  .item
+                    .icon
+                      i.fa.fa-list-ol.fa-2x
+                    p
+                      = t('reach.you_can_reach')
+                      span#bets_count
+                    .icon#help_bets-count data-toggle="tooltip" data-placement="right" data-strategy-path=strategy_path title=t('reach.how_to')
+                      i.fa.fa-question.fa-2x
     .col-md-6
-      .panel.panel-info
+      .panel.panel-info#additional_panel
         .panel-heading
-          h3 = t('reach.your_balance_now')
-        .panel-body
-          p
-            #current_balance_slider.slider data-goal=@goal
-          p
-            .col-md-offset-3.col-md-5
-              .input-group
-                = text_field_tag 'current_balance', @values[:reached_progress], class: 'form-control input-lg'
-                span.input-group-addon
-                  i.fa.fa-rub.fa-2x
-    .col-md-6
-      .panel.panel-info#stats_panel
-        .panel-heading
-          h3 = t('reach.stat')
+          h3 = t('reach.some_information')
         .panel-body
           .container
             .row
               .item
-                .icon
-                  i.fa.fa-arrow-up.fa-2x
                 p
-                  = t('reach.must_multiply')
-                  span#multiply_size
-                  |x
-          .container
-            .row
-              .item
-                .icon
-                  i.fa.fa-list-ol.fa-2x
-                p
-                  = t('reach.you_can_reach')
-                  span#bets_count
-                .icon#help_bets-count data-toggle="tooltip" data-placement="right" data-strategy-path=strategy_path title=t('reach.how_to')
-                  i.fa.fa-question.fa-2x
-
+                  = t('reach.additional.minimal_bet_size')
+                  span#minimal_bet_size = @values[:minimal_bet_size]
 .modal.fade#bets_strategy-modal
   .modal-dialog
     .modal-content
