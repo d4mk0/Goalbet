@@ -13,12 +13,18 @@ GoalController.prototype.reach = ->
     multiply_size = goal_balance/current_balance
     multiply_size += 0.01 unless multiply_size-Math.floor != 0.0
     $("#multiply_size").html(multiply_size.toFixed 2)
-    $("#bets_count").html(howManyBets current_balance, goal_balance)
+    updateBetsCount()
 
     $.cookie 'current_balance', current_balance, 
       expires: 365
     $.cookie 'current_progress', percent_of_reaching,
       expires: 365
+
+  updateBetsCount = ->
+    $.ajax
+      url: '/api/bets_count'
+      success: (data, textStatus, jqXHR) ->
+        $("#bets_count").html data.bets_count
 
   howManyBets = (current_balance, goal_balance) ->
     count_of_bets = 0
