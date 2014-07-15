@@ -5,7 +5,7 @@ GoalController.prototype.reach = ->
     $("#reach-progress .percent").html(percent)
     $("#reach-progress .progress-bar").css("width", "#{percent}%")
 
-  update_progress = (current_balance)->
+  update_progress = (current_balance = $.cookie('current_balance'))->
     goal_balance = $("#current_balance_slider").data('goal')
     percent_of_reaching = Math.floor((parseInt(current_balance,10) / parseInt(goal_balance,10))*100)
     set_progress_bar_percentage percent_of_reaching
@@ -13,12 +13,12 @@ GoalController.prototype.reach = ->
     multiply_size = goal_balance/current_balance
     multiply_size += 0.01 unless multiply_size-Math.floor != 0.0
     $("#multiply_size").html(multiply_size.toFixed 2)
-    updateBetsCount()
 
     $.cookie 'current_balance', current_balance, 
       expires: 365
     $.cookie 'current_progress', percent_of_reaching,
       expires: 365
+    updateBetsCount()
 
   updateBetsCount = ->
     $.ajax
@@ -35,7 +35,7 @@ GoalController.prototype.reach = ->
     count_of_bets
 
   set_progress_bar_percentage $.cookie('current_progress') if $.cookie('current_progress')
-  update_progress $.cookie('current_balance')
+  update_progress()
   $("#help_bets-count").tooltip()
 
   $("#current_balance_slider").noUiSlider
@@ -64,9 +64,13 @@ GoalController.prototype.reach = ->
     success: (resp, value) ->
       $.cookie 'minimal_bet_size', value, 
         expires: 365
+      update_progress()
       return
     validate: (value) ->
-      return 'Error' unless /^\d*$/.test value
+      if /^\d*$/.test value
+        return 'Min bet must be less current_balance' if value > parseInt($("#current_balance").val(), 10)
+      else
+        return 'Only digits available here'
 
 GoalController.prototype.strategy = ->
   modal = $('#bets_strategy-modal')
