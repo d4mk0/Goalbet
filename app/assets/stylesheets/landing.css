@@ -158,6 +158,10 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 750px;
+    width: 700px;
+  }
+  .cover {
+    margin-left: -50px;
+    width: 800px;
   }
 }
