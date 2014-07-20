@@ -19,12 +19,19 @@ GoalController.prototype.reach = ->
     $.cookie 'current_progress', percent_of_reaching,
       expires: 365
     updateBetsCount()
+    updateNextBetSize()
 
   updateBetsCount = ->
     $.ajax
       url: '/api/bets_count'
       success: (data, textStatus, jqXHR) ->
         $("#bets_count").html data.bets_count
+
+  updateNextBetSize = ->
+    $.ajax
+      url: '/api/next_bet_size'
+      success: (data, textStatus, jqXHR) ->
+        $("#next_bet_size").html data.next_bet_size
 
   howManyBets = (current_balance, goal_balance) ->
     count_of_bets = 0

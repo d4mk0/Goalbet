@@ -2,6 +2,7 @@ class GoalController < ApplicationController
 
   before_action :set_goal, :set_current_balance, :set_minimal_bet_size, except: :landing
   before_action :whether_to_show_landing?, only: :landing
+  before_action :get_goal, only: :reach
 
   def landing
     render layout: 'landing'
@@ -10,7 +11,8 @@ class GoalController < ApplicationController
   def reach
     @values = {
       reached_progress: (@goal*0.01).to_i,
-      minimal_bet_size: @minimal_bet_size
+      minimal_bet_size: @minimal_bet_size,
+      next_bet_size: @goal_obj.next_bet_size
     }
   end
 
@@ -39,5 +41,9 @@ class GoalController < ApplicationController
 
     def whether_to_show_landing?
       redirect_to :reach and return if cookies[:goal].present? && (request.referer.blank? || URI(request.referer).path != '/reach')
+    end
+
+    def get_goal
+      @goal_obj = Goal.new cookies[:current_balance], cookies[:goal], minimal_bet_size: cookies[:minimal_bet_size]
     end
 end

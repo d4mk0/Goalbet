@@ -24,6 +24,14 @@ class Goal
     {bets_count: bets_count}
   end
 
+  def next_bet_size
+    (@current_balance * 0.25 > @minimal_bet_size ? @current_balance * 0.25 : @minimal_bet_size).round
+  end
+
+  def json_next_bet_size
+    {next_bet_size: next_bet_size}
+  end
+
   private
 
     def check_values

@@ -26,6 +26,7 @@ ru:
     some_information: Некоторая информация
     additional:
       minimal_bet_size: 'Минимальный размер ставки:'
+    next_bet: 'Следующая ставка:'
   strategy:
     title: Стратегия достижения заданной цели
     table_header:

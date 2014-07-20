@@ -22,6 +22,13 @@
   .row
     .container
       .row
+        .text-center.next_bet_size
+          .label.label-info
+            = t('reach.next_bet')
+            span#next_bet_size = @values[:next_bet_size]
+            i.fa.fa-rub.fa-lg
+    .container
+      .row
         .col-md-6
           .panel.panel-info
             .panel-heading
