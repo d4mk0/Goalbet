@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716181033) do
+ActiveRecord::Schema.define(version: 20140721184355) do
+
+  create_table "feedbacks", force: true do |t|
+    t.string   "subject",    null: false
+    t.text     "text",       null: false
+    t.string   "user_name",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "settings", force: true do |t|
     t.string   "var"

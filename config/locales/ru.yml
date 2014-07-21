@@ -1,4 +1,10 @@
 ru:
+  activerecord:
+    attributes:
+      feedback:
+        subject: Тема
+        text: Текст
+        user_name: Имя
   landing:
     brand: Цель Ставки
     title: Цели твоих ставок здесь!
@@ -36,7 +42,18 @@ ru:
       summary_balance: Общий баланс
     current_balance: "Текущий баланс: %{balance}"
     goal_balance: "Целевой баланс: %{balance}"
+  feedback:
+    help_for_text: Не забудьте также написать каким образом с Вами можно связаться.
+    enter_all_details: Введите данные во все поля
+    placeholders:
+      user_name: Введите ваше имя
+      subject: Введите причину обращения
+      text: Оставьте ваше сообщение
+    thank_for_feedback: Спасибо за ваше обращение!
+    your_opinion_is_imporntant: Для нас очень важно Ваше мнение!
+    we_consider_your_offer: Мы обязательно учтем ваше предложение!
   navbar:
     select_goal: Выбрать цель
     how_reach_goal: Как достичь цели?
+    feedback: Есть предложение или замечание?
   footer: '© Цель Ставки 2014'

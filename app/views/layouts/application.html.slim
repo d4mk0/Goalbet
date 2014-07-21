@@ -32,10 +32,11 @@ html lang="en"
           ul.nav.navbar-nav
             li data-no-turbolink="" = link_to t('navbar.select_goal'), root_path
             li class="#{params[:action] == 'reach' ? 'active' : ''}"= link_to t('navbar.how_reach_goal'), "/reach"
+            li class="#{request.path == new_feedback_path ? 'active' : ''}"= link_to t('navbar.feedback'), new_feedback_path
 
     .container
       .row
-        .col-lg-9
+        .col-lg-12
           = bootstrap_flash
           = yield
 
