@@ -27,6 +27,12 @@
             = t('reach.next_bet')
             span#next_bet_size = @values[:next_bet_size]
             i.fa.fa-rub.fa-lg
+
+        .text-center.current_bet_buttons
+          button.btn.btn-success.btn-xs data-toggle="tooltip" data-placement="bottom" data-strategy-path=strategy_path title=t('reach.press_if_you_win_this_bet')
+            i.fa.fa-plus.fa-lg
+          button.btn.btn-danger.btn-xs data-toggle="tooltip" data-placement="bottom" data-strategy-path=strategy_path title=t('reach.press_if_you_lose_this_bet')
+            i.fa.fa-minus
     .container
       .row
         .col-md-6

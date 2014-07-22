@@ -9,7 +9,7 @@ GoalController.prototype.reach = ->
     goal_balance = $("#current_balance_slider").data('goal')
     percent_of_reaching = Math.floor((parseInt(current_balance,10) / parseInt(goal_balance,10))*100)
     set_progress_bar_percentage percent_of_reaching
-    $("#current_balance").val(current_balance)
+    $("#current_balance, #current_balance_slider").val(current_balance)
     multiply_size = goal_balance/current_balance
     multiply_size += 0.01 unless multiply_size-Math.floor != 0.0
     $("#multiply_size").html(multiply_size.toFixed 2)
@@ -43,7 +43,8 @@ GoalController.prototype.reach = ->
 
   set_progress_bar_percentage $.cookie('current_progress') if $.cookie('current_progress')
   update_progress()
-  $("#help_bets-count").tooltip()
+  $("#help_bets-count,
+    .current_bet_buttons button").tooltip()
 
   $("#current_balance_slider").noUiSlider
     start: parseInt($.cookie('current_balance') || 1, 10)
@@ -78,6 +79,19 @@ GoalController.prototype.reach = ->
         return 'Min bet must be less current_balance' if value > parseInt($("#current_balance").val(), 10)
       else
         return 'Only digits available here'
+
+  plusMinusClick = (plus = true) ->
+    current = parseInt($("#current_balance").val(), 10)
+    bet = parseInt($("#next_bet_size").html(), 10)
+    current_balance = if plus then current+bet else current-bet
+    $("#current_balance").val(current_balance)
+    update_progress(current_balance)
+
+  $(".current_bet_buttons .btn-success").on 'click', ->
+    plusMinusClick()
+
+  $(".current_bet_buttons .btn-danger").on 'click', ->
+    plusMinusClick false
 
 GoalController.prototype.strategy = ->
   modal = $('#bets_strategy-modal')

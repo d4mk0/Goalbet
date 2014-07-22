@@ -33,6 +33,8 @@ ru:
     additional:
       minimal_bet_size: 'Минимальный размер ставки:'
     next_bet: 'Следующая ставка:'
+    press_if_you_win_this_bet: Нажмите если вы выиграли эту ставку
+    press_if_you_lose_this_bet: Нажмите если вы проиграли эту ставку
   strategy:
     title: Стратегия достижения заданной цели
     table_header:
