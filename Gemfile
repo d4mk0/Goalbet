@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'mysql2'
+gem 'pg'
 
 gem 'coffee-rails'
 gem 'uglifier'
@@ -31,7 +33,6 @@ gem "rails-settings-cached", "0.4.1"
 
 group :production do
   gem 'unicorn'
-  gem 'mysql2'
 end
 
 group :development do
